@@ -7,16 +7,23 @@ import javax.swing.JList;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
+
+import Comandas.Comanda;
+
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class GUI_Comandas extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	DefaultListModel modeloLista = new DefaultListModel();
+	Queue <Comanda> cola=new PriorityQueue<Comanda>();
 	/**
 	 * Launch the application.
 	 */
