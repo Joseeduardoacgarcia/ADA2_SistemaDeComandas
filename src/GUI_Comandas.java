@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_Comandas extends JFrame {
 
@@ -63,6 +65,10 @@ public class GUI_Comandas extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Enviar a Cocina");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_1.setBackground(SystemColor.activeCaption);
 		btnNewButton_1.setFont(new Font("Impact", Font.ITALIC, 15));
 		btnNewButton_1.setBounds(150, 270, 175, 53);
