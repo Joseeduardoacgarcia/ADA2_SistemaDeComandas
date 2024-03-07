@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GUI_Comandas extends JFrame {
 
@@ -69,6 +71,11 @@ public class GUI_Comandas extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Status de Comandas");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
 		btnNewButton_2.setFont(new Font("Impact", Font.ITALIC, 15));
 		btnNewButton_2.setBounds(150, 377, 175, 53);
