@@ -42,7 +42,7 @@ public class GUI_Comandas extends JFrame {
 	 */
 	public GUI_Comandas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1003, 580);
+		setBounds(100, 100, 1003, 619);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.YELLOW);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -52,7 +52,7 @@ public class GUI_Comandas extends JFrame {
 		
 		JList list = new JList();
 		list.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		list.setBounds(424, 87, 452, 410);
+		list.setBounds(609, 87, 368, 295);
 		contentPane.add(list);
 		
 		JLabel lblNewLabel = new JLabel("Sistema de Comandas");
@@ -72,10 +72,10 @@ public class GUI_Comandas extends JFrame {
 		btnNewButton_1.setBounds(150, 270, 175, 53);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Status de Comandas");
+		JButton btnNewButton_2 = new JButton("Servir Comandas");
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
 		btnNewButton_2.setFont(new Font("Impact", Font.ITALIC, 15));
-		btnNewButton_2.setBounds(150, 377, 175, 53);
+		btnNewButton_2.setBounds(731, 414, 175, 53);
 		contentPane.add(btnNewButton_2);
 	}
 
