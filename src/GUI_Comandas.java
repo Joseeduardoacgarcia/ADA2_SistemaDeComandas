@@ -20,6 +20,8 @@ public class GUI_Comandas extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	DefaultListModel modeloLista = new DefaultListModel();
+	DefaultListModel modeloLista2 = new DefaultListModel();
+	DefaultListModel modeloLista3 = new DefaultListModel();
 	Queue <Comanda> cola=new PriorityQueue<Comanda>();
 	/**
 	 * Launch the application.
@@ -42,7 +44,7 @@ public class GUI_Comandas extends JFrame {
 	 */
 	public GUI_Comandas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1003, 619);
+		setBounds(100, 100, 1023, 619);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.YELLOW);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,10 +52,10 @@ public class GUI_Comandas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JList list = new JList();
-		list.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		list.setBounds(609, 87, 368, 295);
-		contentPane.add(list);
+		JList list3 = new JList(modeloLista3);
+		list3.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+		list3.setBounds(743, 87, 254, 405);
+		contentPane.add(list3);
 		
 		JLabel lblNewLabel = new JLabel("Sistema de Comandas");
 		lblNewLabel.setFont(new Font("Impact", Font.ITALIC, 40));
@@ -63,20 +65,29 @@ public class GUI_Comandas extends JFrame {
 		JButton btnNewButton = new JButton("Mostrar Comandas");
 		btnNewButton.setBackground(SystemColor.activeCaption);
 		btnNewButton.setFont(new Font("Impact", Font.ITALIC, 15));
-		btnNewButton.setBounds(150, 161, 175, 53);
+		btnNewButton.setBounds(103, 503, 301, 53);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Enviar a Cocina");
 		btnNewButton_1.setBackground(SystemColor.activeCaption);
 		btnNewButton_1.setFont(new Font("Impact", Font.ITALIC, 15));
-		btnNewButton_1.setBounds(150, 270, 175, 53);
+		btnNewButton_1.setBounds(544, 503, 175, 53);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Servir Comandas");
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
 		btnNewButton_2.setFont(new Font("Impact", Font.ITALIC, 15));
-		btnNewButton_2.setBounds(731, 414, 175, 53);
+		btnNewButton_2.setBounds(785, 503, 175, 53);
 		contentPane.add(btnNewButton_2);
+		
+		JList list = new JList(modeloLista);
+		list.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+		list.setBounds(10, 87, 481, 405);
+		contentPane.add(list);
+		
+		JList list2 = new JList(modeloLista2);
+		list2.setBorder(new LineBorder(new Color(0, 0, 0), 3));
+		list2.setBounds(501, 87, 232, 405);
+		contentPane.add(list2);
 	}
-
 }
