@@ -10,9 +10,6 @@ import javax.swing.JTextField;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
-
-import Comandas.Comanda;
-
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.util.PriorityQueue;
