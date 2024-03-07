@@ -73,7 +73,7 @@ public class GUI_Comandas extends JFrame {
 		JButton btnNewButton_2 = new JButton("Status de Comandas");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				//Inicio de la funcion
 			}
 		});
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
