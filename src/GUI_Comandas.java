@@ -50,7 +50,7 @@ public class GUI_Comandas extends JFrame {
 		
 		JList list = new JList();
 		list.setBorder(new LineBorder(new Color(0, 0, 0), 3));
-		list.setBounds(424, 87, 452, 410);
+		list.setBounds(423, 87, 452, 410);
 		contentPane.add(list);
 		
 		JLabel lblNewLabel = new JLabel("Sistema de Comandas");
@@ -59,12 +59,20 @@ public class GUI_Comandas extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Mostrar Comandas");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.setBackground(SystemColor.activeCaption);
 		btnNewButton.setFont(new Font("Impact", Font.ITALIC, 15));
 		btnNewButton.setBounds(150, 161, 175, 53);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Enviar a Cocina");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_1.setBackground(SystemColor.activeCaption);
 		btnNewButton_1.setFont(new Font("Impact", Font.ITALIC, 15));
 		btnNewButton_1.setBounds(150, 270, 175, 53);
@@ -73,7 +81,13 @@ public class GUI_Comandas extends JFrame {
 		JButton btnNewButton_2 = new JButton("Status de Comandas");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Inicio de la funcion
+				while (!cola.isEmpaty()) {
+					Comanda comanda = cola.remover();
+					if (comanda.getEstado().equals("preparado")) {
+						comanda.setEstado("servidas");
+					}
+					
+				}
 			}
 		});
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
