@@ -85,6 +85,7 @@ public class GUI_Comandas extends JFrame {
 					Comanda comanda = cola.remover();
 					if (comanda.getEstado().equals("preparado")) {
 						comanda.setEstado("servidas");
+					
 					}
 					
 				}
