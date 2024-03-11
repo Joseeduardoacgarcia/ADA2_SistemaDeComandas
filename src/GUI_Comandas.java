@@ -80,7 +80,10 @@ public class GUI_Comandas extends JFrame {
 				 cola.add(new Comanda("Mesa 13", 2, 81.5, "En espera"));
 				 cola.add(new Comanda("Mesa 14", 3, 98.75, "En espera"));
 				 cola.add(new Comanda("Mesa 15", 1, 84.0, "En espera"));
-
+				 while (!cola.isEmpty()) {
+	                    Comanda comanda = cola.remove();
+	                    modeloLista.addElement(comanda);
+	                    modeloLista.addElement("--------------");
 			}
 		});
 		btnNewButton.setBackground(SystemColor.activeCaption);
