@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -77,7 +78,8 @@ public class GUI_Comandas extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				 modeloLista.clear();
+				 modeloLista2.clear();
+				 modeloLista3.clear();
 				 cola.add(new Comanda("Mesa 1", 2, 75.0, "En espera"));
 				 cola.add(new Comanda("Mesa 2", 1, 60.0, "En espera"));
 				 cola.add(new Comanda("Mesa 3", 3, 85.75, "En espera"));
@@ -110,6 +112,7 @@ public class GUI_Comandas extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				modeloLista.clear();
+				modeloLista3.clear();
 				cola.add(new Comanda("Mesa 1 ", 2, 75.0,"En espera"));
 				cola.add(new Comanda("Mesa 2 ", 1, 68.0,"En espera"));
 				cola.add(new Comanda("Mesa 3 ", 3, 85.75,"En espera"));
@@ -154,33 +157,35 @@ public class GUI_Comandas extends JFrame {
 				
 	
 				modeloLista.clear();
-				cola.add(new Comanda("Mesa 1", 2, 75.0,"Preparado"));
-		        cola.add(new Comanda("mesa 2", 1, 60.0, "Preparando" ));
-		        cola.add(new Comanda("mesa 3", 3, 85.75, "Preparando"));
-	            cola.add(new Comanda("mesa 4", 4, 70.0, "Preparando"));
-	            cola.add(new Comanda("mesa 5", 2, 95.5, "Preparando"));
-	    		cola.add(new Comanda("mesa 6", 3, 100.0, "Preparando"));
-	    		cola.add(new Comanda("mesa 7", 1, 77.5, "Preparando"));
-	    		cola.add(new Comanda("mesa 8", 4, 86.8, "Preparando"));
-	    		cola.add(new Comanda("mesa 9", 2, 90.0, "Preparando"));
-	    		cola.add(new Comanda("mesa 10", 3, 105.25, "Preparando"));
-	    		cola.add(new Comanda("mesa 11", 1, 67.8, "Preparando"));
-	    		cola.add(new Comanda("mesa 12", 4, 110.0, "Preparando"));
-	    		cola.add(new Comanda("mesa 13", 2, 81.5, "Preparando"));
-	    	    cola.add(new Comanda("mesa 14", 3, 98.75, "Preparando"));
-	    	    cola.add(new Comanda("mesa 15", 1, 84.0, "Preparando"));
+				modeloLista2.clear();
+				cola.add(new Comanda("Mesa 1", 2, 75.0,"Preparando"));
+		        cola.add(new Comanda("Mesa 2", 1, 60.0, "Preparando" ));
+		        cola.add(new Comanda("Mesa 3", 3, 85.75, "Preparando"));
+	            cola.add(new Comanda("Mesa 4", 4, 70.0, "Preparando"));
+	            cola.add(new Comanda("Mesa 5", 2, 95.5, "Preparando"));
+	    		cola.add(new Comanda("Mesa 6", 3, 100.0, "Preparando"));
+	    		cola.add(new Comanda("Mesa 7", 1, 77.5, "Preparando"));
+	    		cola.add(new Comanda("Mesa 8", 4, 86.8, "Preparando"));
+	    		cola.add(new Comanda("Mesa 9", 2, 90.0, "Preparando"));
+	    		cola.add(new Comanda("Mesa 10", 3, 105.25, "Preparando"));
+	    		cola.add(new Comanda("Mesa 11", 1, 67.8, "Preparando"));
+	    		cola.add(new Comanda("Mesa 12", 4, 110.0, "Preparando"));
+	    		cola.add(new Comanda("Mesa 13", 2, 81.5, "Preparando"));
+	    	    cola.add(new Comanda("Mesa 14", 3, 98.75, "Preparando"));
+	    	    cola.add(new Comanda("Mesa 15", 1, 84.0, "Preparando"));
 	    					    		
 
 				
 				while (!cola.isEmpty()) {
 					Comanda comanda = cola.remove();
-					if (comanda.getEstado().equals("preparado")) {
-						comanda.setEstado("servidas");
+					if (comanda.getEstado().equals("Preparando")) {
+						comanda.setEstado("Servidas");
 					}
-					modeloLista3.addElement("nombre:" + comanda.getNombre()+"-Estado:" + comanda.getEstado() +"\n");
+					modeloLista3.addElement("Nombre:" + comanda.getNombre()+"-Estado:" + comanda.getEstado() +"\n");
 					modeloLista3.addElement("----------");
 					
 				}
+				 JOptionPane.showMessageDialog(null, "Las comandas han sido servidas");
 			}
 		});
 
