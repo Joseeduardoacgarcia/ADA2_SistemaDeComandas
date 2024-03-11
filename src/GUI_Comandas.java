@@ -16,11 +16,13 @@ import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 
 
 public class GUI_Comandas extends JFrame {
@@ -60,6 +62,7 @@ public class GUI_Comandas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+
 		JList list3 = new JList(modeloLista3);
 		list3.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		list3.setBounds(743, 87, 254, 405);
@@ -73,6 +76,7 @@ public class GUI_Comandas extends JFrame {
 		JButton btnNewButton = new JButton("Mostrar Comandas");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				 modeloLista.clear();
 				 cola.add(new Comanda("Mesa 1", 2, 75.0, "En espera"));
 				 cola.add(new Comanda("Mesa 2", 1, 60.0, "En espera"));
@@ -93,6 +97,7 @@ public class GUI_Comandas extends JFrame {
 	                    Comanda comanda = cola.remove();
 	                    modeloLista.addElement(comanda);
 	                    modeloLista.addElement("--------------");}
+
 			}
 		});
 		btnNewButton.setBackground(SystemColor.activeCaption);
@@ -103,6 +108,7 @@ public class GUI_Comandas extends JFrame {
 		JButton btnNewButton_1 = new JButton("Enviar a Cocina");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				modeloLista.clear();
 				cola.add(new Comanda("Mesa 1 ", 2, 75.0,"En espera"));
 				cola.add(new Comanda("Mesa 2 ", 1, 68.0,"En espera"));
@@ -133,6 +139,7 @@ public class GUI_Comandas extends JFrame {
 					modeloLista2.addElement("---------------");
 					
 				}
+
 			}
 		});
 		btnNewButton_1.setBackground(SystemColor.activeCaption);
@@ -140,7 +147,43 @@ public class GUI_Comandas extends JFrame {
 		btnNewButton_1.setBounds(544, 503, 175, 53);
 		contentPane.add(btnNewButton_1);
 		
+
 		JButton btnNewButton_2 = new JButton("Servir Comandas");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+	
+				modeloLista.clear();
+				cola.add(new Comanda("Mesa 1", 2, 75.0,"Preparado"));
+		        cola.add(new Comanda("mesa 2", 1, 60.0, "Preparando" ));
+		        cola.add(new Comanda("mesa 3", 3, 85.75, "Preparando"));
+	            cola.add(new Comanda("mesa 4", 4, 70.0, "Preparando"));
+	            cola.add(new Comanda("mesa 5", 2, 95.5, "Preparando"));
+	    		cola.add(new Comanda("mesa 6", 3, 100.0, "Preparando"));
+	    		cola.add(new Comanda("mesa 7", 1, 77.5, "Preparando"));
+	    		cola.add(new Comanda("mesa 8", 4, 86.8, "Preparando"));
+	    		cola.add(new Comanda("mesa 9", 2, 90.0, "Preparando"));
+	    		cola.add(new Comanda("mesa 10", 3, 105.25, "Preparando"));
+	    		cola.add(new Comanda("mesa 11", 1, 67.8, "Preparando"));
+	    		cola.add(new Comanda("mesa 12", 4, 110.0, "Preparando"));
+	    		cola.add(new Comanda("mesa 13", 2, 81.5, "Preparando"));
+	    	    cola.add(new Comanda("mesa 14", 3, 98.75, "Preparando"));
+	    	    cola.add(new Comanda("mesa 15", 1, 84.0, "Preparando"));
+	    					    		
+
+				
+				while (!cola.isEmpty()) {
+					Comanda comanda = cola.remove();
+					if (comanda.getEstado().equals("preparado")) {
+						comanda.setEstado("servidas");
+					}
+					modeloLista3.addElement("nombre:" + comanda.getNombre()+"-Estado:" + comanda.getEstado() +"\n");
+					modeloLista3.addElement("----------");
+					
+				}
+			}
+		});
+
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
 		btnNewButton_2.setFont(new Font("Impact", Font.ITALIC, 15));
 		btnNewButton_2.setBounds(785, 503, 175, 53);
