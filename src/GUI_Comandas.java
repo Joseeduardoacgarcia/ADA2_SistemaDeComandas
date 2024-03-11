@@ -30,6 +30,11 @@ public class GUI_Comandas extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	//Equipo:
+	//Ac Garcia Jose Eduardo
+	//Balam Poot Juan Ulises
+	//Mendoza Landero Ingrid Nayeli
+	//Responsable de hacer el merge: Jose Eduardo Ac Garcia
 	DefaultListModel modeloLista = new DefaultListModel();
 	DefaultListModel modeloLista2 = new DefaultListModel();
 	DefaultListModel modeloLista3 = new DefaultListModel();
