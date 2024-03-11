@@ -83,7 +83,7 @@ public class GUI_Comandas extends JFrame {
 				 while (!cola.isEmpty()) {
 	                    Comanda comanda = cola.remove();
 	                    modeloLista.addElement(comanda);
-	                    modeloLista.addElement("--------------");
+	                    modeloLista.addElement("--------------");}
 			}
 		});
 		btnNewButton.setBackground(SystemColor.activeCaption);
