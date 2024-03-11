@@ -13,6 +13,8 @@ import javax.swing.border.LineBorder;
 
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -99,6 +101,40 @@ public class GUI_Comandas extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Enviar a Cocina");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				modeloLista.clear();
+				cola.add(new Comanda("Mesa 1 ", 2, 75.0,"En espera"));
+				cola.add(new Comanda("Mesa 2 ", 1, 68.0,"En espera"));
+				cola.add(new Comanda("Mesa 3 ", 3, 85.75,"En espera"));
+				cola.add(new Comanda("Mesa 4 ", 4, 70.0, "En espera"));
+				cola.add(new Comanda("Mesa 5 ", 2, 95.5, "En espera"));
+				cola.add(new Comanda("Mesa 6 ", 3, 100.0,"En espera"));
+				cola.add(new Comanda("Mesa 7 ", 1, 77.5, "En espera"));
+				cola.add(new Comanda("Mesa 8 ", 4, 86.8, "En espera"));
+				cola.add(new Comanda("Mesa 9 ", 2, 98.0, "En espera"));
+				cola.add(new Comanda("Mesa 10 ", 3, 105.25,"En espera"));
+				cola.add(new Comanda("Mesa 11 ", 1, 67.8, "En espera"));
+				cola.add(new Comanda("Mesa 12 ", 4, 110.0,"En espera"));
+				cola.add(new Comanda("Mesa 13 ", 2, 81.5, "En espera"));
+				cola.add(new Comanda("Mesa 14 ", 3, 98.75,"En espera"));
+				cola.add(new Comanda("Mesa 15", 1, 84.0, "En espera"));
+				
+				Queue<Comanda> colaActualizada = new PriorityQueue<>();
+				while (!cola.isEmpty()) {
+					Comanda comanda = cola.remove();
+					//Cambia el estado solo si el estado atual es en "espera"
+					if (comanda.getEstado().equals("En espera")) {
+					comanda. setEstado ("Preparando");
+					}
+					colaActualizada. add (comanda) ;
+					modeloLista2.addElement("Nombre: " + comanda.getNombre() +
+					", Estado:"+ comanda.getEstado());
+					modeloLista2.addElement("---------------");
+					
+				}
+			}
+		});
 		btnNewButton_1.setBackground(SystemColor.activeCaption);
 		btnNewButton_1.setFont(new Font("Impact", Font.ITALIC, 15));
 		btnNewButton_1.setBounds(544, 503, 175, 53);
