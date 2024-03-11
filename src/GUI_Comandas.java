@@ -81,12 +81,32 @@ public class GUI_Comandas extends JFrame {
 		JButton btnNewButton_2 = new JButton("Status de Comandas");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+	
+				modeloLista.clear();
+				cola.add(new Comanda("Mesa 1", 2), 75.0,"Preparado"));
+		        cola.add(new Comanda("mesa 2", 1, 60.0, "Preparando" ));
+		        cola.add(new Comanda("mesa 3", 3, 85.75, "Preparando"));
+	            cola.add(new Comanda("mesa 4", 4, 70.0, "Preparando"));
+	            cola.add(new Comanda("mesa 5", 2, 95.5, "Preparando"));
+	    		cola.add(new Comanda("mesa 6", 3, 100.0, "Preparando"));
+	    		cola.add(new Comanda("mesa 7", 1, 77.5, "Preparando"));
+	    		cola.add(new Comanda("mesa 8", 4, 86.8, "Preparando"));
+	    		cola.add(new Comanda("mesa 9", 2, 90.0, "Preparando"));
+	    		cola.add(new Comanda("mesa 10", 3, 105.25, "Preparando"));
+	    		cola.add(new Comanda("mesa 11", 1, 67.8, "Preparando"));
+	    		cola.add(new Comanda("mesa 12", 4, 110.0, "Preparando"));
+	    		cola.add(new Comanda("mesa 13", 2, 81.5, "Preparando"));
+	    	    cola.add(new Comanda("mesa 14", 3, 98.75, "Preparando"));
+	    	    cola.add(new Comanda("mesa 15", 1, 84.0, "Preparando"));
+	    					    		
+
+				
 				while (!cola.isEmpaty()) {
 					Comanda comanda = cola.remover();
 					if (comanda.getEstado().equals("preparado")) {
 						comanda.setEstado("servidas");
 					}
-					Object modeloLista3;
 					modeloLista3.addElement("nombre:" + comanda.getNombre()+"-Estado:" + comanda.getEstado() +"\n");
 					modeloLista3.addElement("----------");
 					
