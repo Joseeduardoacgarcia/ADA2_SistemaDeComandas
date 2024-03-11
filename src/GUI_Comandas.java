@@ -83,6 +83,20 @@ public class GUI_Comandas extends JFrame {
 				cola.add(new Comanda("Mesa 13 ", 2, 81.5, "En espera"));
 				cola.add(new Comanda("Mesa 14 ", 3, 98.75,"En espera"));
 				cola.add(new Comanda("Mesa 15", 1, 84.0, "En espera"));
+				
+				Queue<Comanda> colaActualizada = new PriorityQueue<>();
+				while (!cola.isEmpty()) {
+					Comanda comanda = cola.remove();
+					//Cambia el estado solo si el estado atual es en "espera"
+					if (comanda.getEstado().equals("En espera")) {
+					comanda. setEstado ("Preparando");
+					}
+					colaActualizada. add (comanda) ;
+					modeloLista2.addElement("Nombre: " + comanda.getNombre() +
+					", Estado:"+ comanda.getEstado());
+					modeloLista2.addElement("---------------");
+					
+				}
 			}
 		});
 		btnNewButton_1.setBackground(SystemColor.activeCaption);
